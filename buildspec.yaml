@@ -1,0 +1,26 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: latest
+    commands:
+      - echo "Installing dependencies..."
+      - echo "Done with install phase."
+
+  pre_build:
+    commands:
+      - echo "Preparing environment..."
+      - echo "Done with pre-build phase."
+
+  build:
+    commands:
+      - echo "Building the application..."
+      - echo "Running tests..."
+      - grep -Fq "Congratulations" index.html
+      - echo "Done with build phase."
+
+  post_build:
+    commands:
+      - echo "Running post-build actions..."
+      - echo "Done with post-build phase."
